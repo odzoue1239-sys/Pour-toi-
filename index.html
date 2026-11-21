@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pour Julian</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Sans+JP:wght@500&family=Noto+Sans+SC:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stars"></div>
+
+<!-- Écran 1 : décompte -->
+<section class="screen active" id="s1">
+<p class="kicker">Quelque chose t'attend</p>
+<h1>Patiente un instant</h1>
+<div class="slot">
+<div id="count" class="count">5</div>
+<button class="btn hidden" id="next1">Next</button>
+</div>
+</section>
+
+<!-- Écran 2 : message d'accueil -->
+<section class="screen" id="s2">
+<h1 class="big">Spécialement pour ton anniversaire</h1>
+<button class="btn bottom" id="next2">appuie petit con</button>
+</section>
+
+<!-- Écran 3 : cadeau + lettre -->
+<section class="screen" id="s3">
+<p class="touch" id="touch">touche moi</p>
+
+<button class="gift" id="gift" aria-label="Ouvrir le cadeau">
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<rect class="g-body" x="35" y="90" width="130" height="95" rx="6"/>
+<rect class="g-ribbon" x="92" y="90" width="16" height="95"/>
+<g class="g-lid">
+<rect class="g-lidbox" x="26" y="66" width="148" height="30" rx="6"/>
+<rect class="g-ribbon" x="92" y="66" width="16" height="30"/>
+<path class="g-bow" d="M100 66 C70 20, 40 48, 100 66 C160 48, 130 20, 100 66 Z"/>
+<circle class="g-knot" cx="100" cy="64" r="7"/>
+</g>
+</svg>
+</button>
+
+<article class="letter hidden" id="letter">
+<p>Mon ami, en vrai, ça fait tellement longtemps que l'on se connaît et franchement, avec toi, j'ai eu l'impression de me sentir enfin complet. Tu étais vraiment l'opposé de moi et pourtant, ça a tellement bien marché entre nous deux.</p>
+<p>Avec toi, j'ai eu l'impression de ne plus être seul, de ne plus avoir ce sentiment de vide malgré que je parlais avec tout le monde. Franchement, tu t'en rends pas compte mais t'as eu une sacrée influence sur moi.</p>
+<p>Comme dans la capture du dernier TikTok que je t'ai envoyé : « Tu le sais peut-être pas mais t'as rendu ma vie 100 fois meilleure. »</p>
+<p>Merci.</p>
+<p class="sign">Joyeux anniversaire Julian ❤️</p>
+</article>
+
+<button class="btn hidden bottom" id="next3">Next</button>
+</section>
+
+<!-- Écran 4 : photo + palette -->
+<section class="screen" id="s4">
+<div class="portrait-wrap">
+<img class="portrait" src="julian.jpg" alt="Julian">
+<ul class="palette">
+<li style="--c:#7390AB">
+<span class="dot"></span>
+<div><h3>Bleu ardoise : ta personnalité extérieure</h3>
+<p>Réfléchi, posé, parfois froid, pas particulièrement sociable. Tu donnes l'impression d'observer et de réfléchir avant de t'exprimer.</p></div>
+</li>
+<li style="--c:#D4A1AB">
+<span class="dot"></span>
+<div><h3>Rose poudré : ta douceur</h3>
+<p>Ta gentillesse, ton côté adorable, ton affection et ta manière de montrer que tu apprécies les personnes qui comptent pour toi.</p></div>
+</li>
+<li style="--c:#CCA85B">
+<span class="dot"></span>
+<div><h3>Doré : ta personnalité chaleureuse</h3>
+<p>Ton humour, ta bonté, ta capacité à rendre les conversations agréables et cette petite lumière que tu apportes dans tes relations.</p></div>
+</li>
+<li style="--c:#566B52">
+<span class="dot"></span>
+<div><h3>Vert sauge : ton évolution</h3>
+<p>Ton changement de vision des choses, ta maturité, ta réflexion et ton évolution personnelle.</p></div>
+</li>
+<li style="--c:#75594E">
+<span class="dot"></span>
+<div><h3>Brun noisette : ta stabilité</h3>
+<p>Ton côté sentimental mais maîtrisé, ton attachement, ton authenticité et ton côté rassurant.</p></div>
+</li>
+</ul>
+</div>
+<button class="btn" id="next4">Next</button>
+</section>
+
+<!-- Écran 5 : gâteau -->
+<section class="screen" id="s5">
+<div class="cake">
+<div class="candle"><div class="flame"></div></div>
+<div class="layer top"></div>
+<div class="layer mid"></div>
+<div class="layer bot"></div>
+<div class="plate"></div>
+</div>
+
+<h2 id="wish" class="wish">Joyeux anniversaire</h2>
+<p class="caption">Je te dis joyeux anniversaire dans chaque langue que tu as déjà parlée devant moi.</p>
+<button class="btn" id="next5">Next</button>
+</section>
+
+<!-- Écran 6 : globe, distance et adresses -->
+<section class="screen" id="s6">
+<canvas id="globe" width="600" height="600" aria-label="Globe terrestre"></canvas>
+
+<div class="distance hidden" id="distanceBox">
+<p class="km"><span id="km">0</span> km</p>
+<h2 class="far">Malgré la distance, je t'aime bro</h2>
+<div class="addresses">
+<a class="addr me" href="https://maps.app.goo.gl/5jEtmg442Jf1gs2R8?g_st=iw" target="_blank" rel="noopener">Mon adresse</a>
+<a class="addr him" href="https://maps.app.goo.gl/qjJyGHxV9VbsbjYc9?g_st=aw" target="_blank" rel="noopener">Ton adresse</a>
+</div>
+<button class="btn small" id="replay">Revoir depuis le début</button>
+</div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
